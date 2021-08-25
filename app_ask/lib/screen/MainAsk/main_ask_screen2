@@ -1,7 +1,6 @@
-import 'package:app_ask/constants.dart';
 import 'package:flutter/material.dart';
-
-import 'components/body.dart';
+import 'package:app_ask/screen/SigninOrSingup/signin_or_singup_screen.dart';
+import 'package:app_ask/constants.dart';
 
 
 class MainAskScreen extends StatefulWidget {
@@ -15,12 +14,10 @@ class _MainAskScreenState extends State<MainAskScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
-      
-      body: Body(),
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: (value){
+        onTap: (value) {
           setState(() {
             _selectedIndex = value;
           });
@@ -28,41 +25,44 @@ class _MainAskScreenState extends State<MainAskScreen> {
 
         items: const [
           BottomNavigationBarItem(
+            icon: Icon(Icons.alt_route), 
+            label: "all",
+            backgroundColor: Colors.blue,          
+          ),
+
+          BottomNavigationBarItem(
             icon: Icon(Icons.search), 
             label: "find",
+            backgroundColor: Colors.blue,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.alt_route), 
-              label: "all",
-          ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.live_help_outlined), 
-            label: "ask now"
+            label: "ask now",
+            backgroundColor: Colors.blue,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications), 
-            label: "new"
-          ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.smart_toy_outlined), 
-            label: "me"
+            label: "me",
+            backgroundColor: Colors.blue,
           ),
           
         ],
       ),
-    );
+    ); 
   }
+  
 
   AppBar buildAppBar() {
     return AppBar(
-      // automaticallyImplyLeading: false,
-      title: Text("comunity"),
+      title: Text("community ask"),
+
       actions: [
         IconButton(
-          icon: Icon(Icons.menu),
+          icon: Icon(Icons.notifications),
           onPressed: () {},
-        ),
+        )
       ],
     );
   }

@@ -1,19 +1,30 @@
+import 'package:app_ask/constants.dart';
+import 'package:app_ask/models/ask.dart';
 import 'package:flutter/material.dart';
 
-class body extends StatelessWidget {
+class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
 
-        Expanded(
-          child: ListView.builder(
-            itemBuilder: (context, index) => Text("ask ask ask"),
+        //no
+        Container(
+          color: kPrimaryColor,
+          child: Row(
+            children: [
+              //no
+            ],
           ),
         ),
+        //no
 
+        Expanded(child: ListView.builder(
+          itemCount: AskData.length,
+          itemBuilder: (context, index) => Text("test"),
+          )
+        )
       ],
     );
-      
   }
 }

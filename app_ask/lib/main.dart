@@ -1,3 +1,4 @@
+import 'package:app_ask/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ask/screen/welcome/welcome_screen.dart';
 
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      
+      theme: lightThemeData(context),
+
       home: WelcomeScreen(),
     );
   }
