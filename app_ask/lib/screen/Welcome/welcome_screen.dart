@@ -11,29 +11,50 @@ class WelcomeScreen extends StatelessWidget {
         child: Column(  
           children: [
             Spacer(flex: 1),
+
             Image.asset("/Users/qwe/Documents/GitLab/flutter-app-ask/app_ask/assets/image/gretting.png"),
+
             Spacer(flex: 1),
+
             Text(
               "Welcome to app ask \n You can ask anything",
               textAlign: TextAlign.center,
               style: Theme.of(context)
                 .textTheme 
                 .headline5!
-                .copyWith(fontWeight: FontWeight.bold),
+                .copyWith(fontWeight: FontWeight.bold)
+                .apply(fontSizeFactor: 1.0),
             ),
+
             Spacer(flex: 1),
+
             Text(
-              "good to meet you.",
+              "\"The world is freedom\"",
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                .textTheme 
+                .headline6!
+                .copyWith(fontWeight: FontWeight.bold)
+                .apply(fontSizeFactor: 1.0),
+            ),
+
+            Spacer(flex: 1),
+
+            Text(
+              "Good to meet you.",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Theme.of(context)
                   .textTheme
                   .bodyText1!
                   .color!
-                  .withOpacity(0.7),
-              ),
+                  .withOpacity(0.7)
+                  ,
+              ),  
             ),
+
             Spacer(flex: 1),
+
             FittedBox(
               child: TextButton(
                 onPressed: () => Navigator.push(

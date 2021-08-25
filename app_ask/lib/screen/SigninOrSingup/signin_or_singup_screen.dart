@@ -58,6 +58,24 @@ class SigninOrSignupScreen extends StatelessWidget {
                 child: Text('Sign Up'),
               ),
 
+              // Spacer(flex: 1),
+              SizedBox(height: kDefaultPadding * 3,),
+              
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.grey, // background
+                  onPrimary: Colors.white, // foreground
+                ),
+                onPressed: () { 
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder : (context) => MainAskScreen()),
+                  ); 
+                },
+                child: Text('or Guest Login'),
+              ),
+
               Spacer(flex: 1),
 
             FittedBox(
@@ -92,31 +110,9 @@ class SigninOrSignupScreen extends StatelessWidget {
                           .withOpacity(0.8),
                       ),
                     ),
-           
-                    // Icon(
-                    //   Icons.arrow_back_ios,
-                    //   size: 16,
-                    //   color: Theme.of(context)
-                    //     .textTheme
-                    //     .bodyText1!
-                    //     .color!
-                    //     .withOpacity(0.8),
-                    // ),
-                    // SizedBox(width: kDefaultPadding / 10,),
-                    // Text(
-                    //   "back",
-                    //   style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                    //     color: Theme.of(context)
-                    //       .textTheme
-                    //       .bodyText1!
-                    //       .color!
-                    //       .withOpacity(0.8),
-                    //   ),
-                    // ),
-                    
+                            
                   ],
                   
-             
                 ),
               ),
             ),
