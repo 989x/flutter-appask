@@ -57,7 +57,7 @@ class _MainAskScreenState extends State<MainAskScreen> {
   AppBar buildAppBar() {
     return AppBar(
       // automaticallyImplyLeading: false,
-      title: Text("comunity"),
+      title: Text("community"),
       actions: [
         IconButton(
           icon: Icon(Icons.menu),

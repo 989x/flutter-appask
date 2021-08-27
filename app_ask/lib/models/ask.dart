@@ -9,19 +9,27 @@ class Ask {
 
 List AskData = [
   Ask(
-    name: "name a",
-    asking: "question 1",
+    name: "Ravi Gavin",
+    asking: "What’s the best thing that happened to you last week?",
   ),
   Ask(
-    name: "name b",
-    asking: "question 2",
+    name: "Krzysztof Adriel",
+    asking: "If you suddenly became a master at woodworking, what would you make?",
   ),
   Ask(
-    name: "name c",
-    asking: "question 3",
+    name: "Sofron Rosalina",
+    asking: "What’s your favorite smell?",
   ),
   Ask(
-    name: "name e",
-    asking: "question 4",
+    name: "Georgiana Cato",
+    asking: "When was the last time you immediately regretted something you said?",
+  ),
+  Ask(
+    name: "Haroon Thorvald",
+    asking: "When was the last time you laughed so hard you cried?",
+  ),
+  Ask(
+    name: "Piruz Nestor",
+    asking: "If you could learn the answer to one question about your future, what would the question be?",
   ),
 ];
