@@ -32,4 +32,8 @@ List AskData = [
     name: "Piruz Nestor",
     asking: "If you could learn the answer to one question about your future, what would the question be?",
   ),
+  Ask(
+    name: "Tammy Howell",
+    asking: "What’s quickly becoming obsolete?",
+  ),
 ];
