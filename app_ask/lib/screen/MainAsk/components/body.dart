@@ -61,8 +61,8 @@ class AllArkBoard extends StatelessWidget {
 
           child: Container (
 
-            margin: EdgeInsets.all(1),
-            padding: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(1),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
@@ -92,7 +92,7 @@ class AllArkBoard extends StatelessWidget {
                 //name
                 Text(
                   ask.name,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -103,7 +103,7 @@ class AllArkBoard extends StatelessWidget {
                 //asking
                 Text(
                   ask.asking,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 14,
                   ),
@@ -117,32 +117,45 @@ class AllArkBoard extends StatelessWidget {
                     // child: Stack(
                     //   alignment: Alignment.center
                     // ),
-
                     height: 140,
                     // width: 520.0,
                     width: 300,
-                    
                     decoration: BoxDecoration(
                      borderRadius: BorderRadius.circular(20),
-                     
-                      image: DecorationImage(
-                        
+                      image: DecorationImage( 
                         image: AssetImage(ask.image),
                         // fit: BoxFit.fitHeight,
                         // fit: BoxFit.contain,
                         fit: BoxFit.fitWidth,
-
-                        
-                      ),
-                      
+                      ),  
                     ),
                   ),
                 ),
 
+                //button
+                Row(
+                  children: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.upload_rounded),
+                      iconSize: 25,
+                      onPressed: () => print('Like'),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.download_rounded),
+                      iconSize: 25,
+                      onPressed: () => print('Like'),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.comment),
+                      iconSize: 25,
+                      onPressed: () => print('Like'),
+                    ),
+                  ],
+                )
+
               ],
             ),
           ),
-            
         ),
       ),
     );
