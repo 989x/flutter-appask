@@ -16,6 +16,7 @@ class SigninOrSignupScreen extends StatelessWidget {
               Image.asset("/Users/qwe/Documents/GitLab/flutter-app-ask/app_ask/assets/image/login.png"),            
               Spacer(flex: 1),
 
+              //text 1
               Text(
               "You must first login",
               textAlign: TextAlign.center,
@@ -27,6 +28,7 @@ class SigninOrSignupScreen extends StatelessWidget {
 
               Spacer(flex: 1),
 
+              //button sign in
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue, // background
@@ -44,6 +46,7 @@ class SigninOrSignupScreen extends StatelessWidget {
 
               SizedBox(height: kDefaultPadding * 1,),
 
+              //button sign up
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.blue, // background
@@ -61,7 +64,7 @@ class SigninOrSignupScreen extends StatelessWidget {
               // Spacer(flex: 1),
               SizedBox(height: kDefaultPadding * 3,),
               
-
+              //button or guest login
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Colors.grey, // background
@@ -88,6 +91,7 @@ class SigninOrSignupScreen extends StatelessWidget {
                 ),
               ),
 
+                //button backward
                 child: Row(
                   children: [
                     Icon(
@@ -110,9 +114,7 @@ class SigninOrSignupScreen extends StatelessWidget {
                           .withOpacity(0.8),
                       ),
                     ),
-                            
                   ],
-                  
                 ),
               ),
             ),

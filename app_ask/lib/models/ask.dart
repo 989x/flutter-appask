@@ -5,9 +5,7 @@ class Ask {
     this.name = '',
     this.asking = '',
     this.image = '',
-
     this.profile = '',
-
     this.time = '',
   });
 }

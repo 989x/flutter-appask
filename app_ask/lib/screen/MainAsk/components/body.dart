@@ -14,6 +14,8 @@ class Body extends StatelessWidget {
           color: Colors.white,
           child: Row(
             children: [
+
+              //home
               ElevatedButton.icon(
                 onPressed: () {}, 
                 icon: const Icon(Icons.timeline_rounded,), 
@@ -22,6 +24,7 @@ class Body extends StatelessWidget {
 
               SizedBox(width: kDefaultPadding),
               
+              //Trand
               ElevatedButton.icon(
                 onPressed: () {}, 
                 icon: const Icon(Icons.timeline_rounded,), 
@@ -30,6 +33,7 @@ class Body extends StatelessWidget {
 
               SizedBox(width: kDefaultPadding),
               
+              //Popular
               ElevatedButton.icon(
                 onPressed: () {}, 
                 icon: const Icon(Icons.timeline_rounded,), 
@@ -55,6 +59,8 @@ class Body extends StatelessWidget {
 }
 
 class AllArkBoard extends StatelessWidget {
+
+  //debug error
   const AllArkBoard({
     Key? key, 
     required this.ask, 
@@ -74,10 +80,6 @@ class AllArkBoard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
           horizontal: kDefaultPadding, vertical: kDefaultPadding / 4
         ),
-
-        //
-        
-        //
 
         child: Container(
 
@@ -220,7 +222,7 @@ class AllArkBoard extends StatelessWidget {
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
-                    const Text(
+                    Text(
                       '60',
                       style: TextStyle(
                         fontSize: 12,
@@ -234,7 +236,7 @@ class AllArkBoard extends StatelessWidget {
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
-                    const Text(
+                    Text(
                       '30',
                       style: TextStyle(
                         fontSize: 12,

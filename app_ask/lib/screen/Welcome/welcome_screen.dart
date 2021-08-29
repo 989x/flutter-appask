@@ -16,6 +16,7 @@ class WelcomeScreen extends StatelessWidget {
 
             Spacer(flex: 1),
 
+            //text 1
             Text(
               "Welcome to app ask \n You can ask anything",
               textAlign: TextAlign.center,
@@ -28,6 +29,7 @@ class WelcomeScreen extends StatelessWidget {
 
             Spacer(flex: 1),
 
+            //text 2
             Text(
               "\"The world is freedom\"",
               textAlign: TextAlign.center,
@@ -40,6 +42,7 @@ class WelcomeScreen extends StatelessWidget {
 
             Spacer(flex: 1),
 
+            //text 3
             Text(
               "Good to meet you.",
               textAlign: TextAlign.center,
@@ -55,6 +58,7 @@ class WelcomeScreen extends StatelessWidget {
 
             Spacer(flex: 1),
 
+            // button for next page
             FittedBox(
               child: TextButton(
                 onPressed: () => Navigator.push(

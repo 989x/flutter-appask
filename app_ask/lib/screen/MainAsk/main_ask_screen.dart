@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'components/body.dart';
 
-
 class MainAskScreen extends StatefulWidget {
   @override
   State<MainAskScreen> createState() => _MainAskScreenState();
@@ -18,46 +17,13 @@ class _MainAskScreenState extends State<MainAskScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(
+
       ),
-
-    // return DefaultTabController(
-    //   length: 3,
-    //   child: Scaffold(
-    //     appBar: AppBar(
-    //       title: Text('sample'),
-    //       bottom: TabBar(
-    //         tabs: <Widget>[
-    //           Tab(
-    //             text: '1',
-    //           )
-    //         ] ),
-    //     ),
-    //   ),
     
-      body: Body(),
+      //nothing have
+      body: Body(
 
-      
-      //
-      // add new
-      
-      // body: FutureBuilder(
-      //   builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {  
-      //     if (snapshot.hasData) {
-      //       List<Ask>ask=snapshot.data;
-      //       return ListView.builder(
-      //         itemCount: ask.length,
-      //         itemBuilder: (context, index) =>
-      //           customListTile(ask[index], context),
-      //       );
-      //     }
-      //     return Center(
-      //       child: CircularProgressIndicator(),
-      //     );
-      //   },
-     
-      // ),
-
-      //
+      ),
 
       //botton menu
       bottomNavigationBar: BottomNavigationBar(
@@ -67,7 +33,6 @@ class _MainAskScreenState extends State<MainAskScreen> {
             _selectedIndex = value;
           });
         },
-
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.travel_explore_rounded), 
@@ -90,13 +55,12 @@ class _MainAskScreenState extends State<MainAskScreen> {
             icon: Icon(Icons.smart_toy_outlined), 
             label: "me"
           ),
-          
         ],
       ),
     );
   }
 
-  //Bar title
+  //Bar title name
   AppBar buildAppBar() {
     return AppBar(
       // automaticallyImplyLeading: false,
@@ -106,7 +70,6 @@ class _MainAskScreenState extends State<MainAskScreen> {
           icon: const Icon(Icons.menu),
           onPressed: () {},
         ),
-        
       ],
     );
   }
