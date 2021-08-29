@@ -50,7 +50,7 @@ class AllArkBoard extends StatelessWidget {
       onTap: press,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: kDefaultPadding, vertical: kDefaultPadding / 2
+          horizontal: kDefaultPadding, vertical: kDefaultPadding / 4
         ),
 
         //
@@ -118,9 +118,9 @@ class AllArkBoard extends StatelessWidget {
                     //   alignment: Alignment.center
                     // ),
 
-                    height: 180,
+                    height: 140,
                     // width: 520.0,
-                    width: 250,
+                    width: 300,
                     
                     decoration: BoxDecoration(
                      borderRadius: BorderRadius.circular(20),
@@ -128,7 +128,10 @@ class AllArkBoard extends StatelessWidget {
                       image: DecorationImage(
                         
                         image: AssetImage(ask.image),
-                        fit: BoxFit.fitHeight,
+                        // fit: BoxFit.fitHeight,
+                        // fit: BoxFit.contain,
+                        fit: BoxFit.fitWidth,
+
                         
                       ),
                       
