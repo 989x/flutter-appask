@@ -90,12 +90,58 @@ class AllArkBoard extends StatelessWidget {
                 // ),
 
                 //name
-                Text(
-                  ask.name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
+                Row(
+                  children: [
+
+                    //avatar
+                    Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: CircleAvatar(
+                        radius: 16,
+                        backgroundImage: AssetImage(
+                          ask.profile
+                        ),
+                      ),
+                    ),
+
+                    //name
+                    Padding(
+                      padding: 
+                        // const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        const EdgeInsets.all(6),
+                        //form Column
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            ask.name,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                        ],
+                      ),
+                    ),
+
+                    //time
+                    Padding(
+                      padding: 
+                        const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
+                      child: Opacity(
+                        opacity: 0.8,
+                        child: Text(
+                          ask.time,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                  
                 ),
 
                 const SizedBox(height: 8),
@@ -114,14 +160,11 @@ class AllArkBoard extends StatelessWidget {
                 Center(
                   child: Container(
                     alignment: Alignment.bottomCenter,
-                    // child: Stack(
-                    //   alignment: Alignment.center
-                    // ),
                     height: 140,
                     // width: 520.0,
                     width: 300,
                     decoration: BoxDecoration(
-                     borderRadius: BorderRadius.circular(20),
+                     borderRadius: BorderRadius.circular(10),
                       image: DecorationImage( 
                         image: AssetImage(ask.image),
                         // fit: BoxFit.fitHeight,
@@ -136,22 +179,23 @@ class AllArkBoard extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     IconButton(
-                      icon: Icon(Icons.upload_rounded),
+                      icon: const Icon(Icons.upload_rounded),
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
                     IconButton(
-                      icon: Icon(Icons.download_rounded),
+                      icon: const Icon(Icons.download_rounded),
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
+
                     IconButton(
-                      icon: Icon(Icons.comment),
+                      icon: const Icon(Icons.comment),
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
                   ],
-                )
+                ),
 
               ],
             ),
