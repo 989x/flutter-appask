@@ -12,7 +12,7 @@ class Body extends StatelessWidget {
         Container(
           color: kPrimaryColor,
           child: Row(
-            children: [
+            children: const [
               //no
             ],
           ),
@@ -50,7 +50,7 @@ class AllArkBoard extends StatelessWidget {
       onTap: press,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: kDefaultPadding, vertical: kDefaultPadding / 1.5
+          horizontal: kDefaultPadding, vertical: kDefaultPadding / 2
         ),
 
         //
@@ -66,7 +66,7 @@ class AllArkBoard extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
                   blurRadius: 3,
@@ -79,15 +79,6 @@ class AllArkBoard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
 
               children: [
-
-                //image
-                Container(
-                  height: 100,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-
-                  ),
-                ),
 
                 //tag
                 // Container(
@@ -107,9 +98,7 @@ class AllArkBoard extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(
-                  height: 8,
-                ),
+                const SizedBox(height: 8),
 
                 //asking
                 Text(
@@ -118,7 +107,35 @@ class AllArkBoard extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                     fontSize: 14,
                   ),
-                )
+                ),
+
+                const SizedBox(height: 8),
+
+                Center(
+                  child: Container(
+                    alignment: Alignment.bottomCenter,
+                    // child: Stack(
+                    //   alignment: Alignment.center
+                    // ),
+
+                    height: 180,
+                    // width: 520.0,
+                    width: 250,
+                    
+                    decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(20),
+                     
+                      image: DecorationImage(
+                        
+                        image: AssetImage(ask.image),
+                        fit: BoxFit.fitHeight,
+                        
+                      ),
+                      
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),

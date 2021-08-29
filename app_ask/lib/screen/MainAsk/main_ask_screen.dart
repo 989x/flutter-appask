@@ -55,12 +55,12 @@ class _MainAskScreenState extends State<MainAskScreen> {
 
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.search), 
+            icon: Icon(Icons.travel_explore_rounded), 
             label: "find",
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.alt_route), 
+              Icons.alt_route_rounded), 
               label: "all",
           ),
           BottomNavigationBarItem(
@@ -68,8 +68,8 @@ class _MainAskScreenState extends State<MainAskScreen> {
             label: "ask now"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications), 
-            label: "new"
+            icon: Icon(Icons.all_inbox), 
+            label: "new+"
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.smart_toy_outlined), 
