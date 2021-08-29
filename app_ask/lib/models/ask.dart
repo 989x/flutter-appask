@@ -16,14 +16,14 @@ List AskData = [
   Ask(
     name: "Ravi Gavin",
     asking: "What’s the best thing that happened to you last week?",
-    image: "/Users/qwe/Documents/GitLab/flutter-app-ask/app_ask/assets/image/db/content/db-ask7.png",
+    image: "/Users/qwe/Documents/GitLab/flutter-app-ask/app_ask/assets/image/db/content/db-ask4.png",
 
     profile: "/Users/qwe/Documents/GitLab/flutter-app-ask/app_ask/assets/image/db/profile/db-profile.png",
 
     time: "1 m ago",
   ),
   Ask(
-    name: "Krzysztof Adriel",
+    name: "Mabel Richards",
     asking: "If you suddenly became a master at woodworking, what would you make?",
     image: "/Users/qwe/Documents/GitLab/flutter-app-ask/app_ask/assets/image/db/content/db-ask6.png",
 

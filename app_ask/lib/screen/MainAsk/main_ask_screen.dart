@@ -17,11 +17,26 @@ class _MainAskScreenState extends State<MainAskScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(
+      ),
+
+    // return DefaultTabController(
+    //   length: 3,
+    //   child: Scaffold(
+    //     appBar: AppBar(
+    //       title: Text('sample'),
+    //       bottom: TabBar(
+    //         tabs: <Widget>[
+    //           Tab(
+    //             text: '1',
+    //           )
+    //         ] ),
+    //     ),
+    //   ),
+    
+      body: Body(),
 
       
-      //
-      body: Body(),
       //
       // add new
       
@@ -44,7 +59,7 @@ class _MainAskScreenState extends State<MainAskScreen> {
 
       //
 
-
+      //botton menu
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (value){
@@ -81,15 +96,17 @@ class _MainAskScreenState extends State<MainAskScreen> {
     );
   }
 
+  //Bar title
   AppBar buildAppBar() {
     return AppBar(
       // automaticallyImplyLeading: false,
-      title: Text("community"),
+      title: const Text("community"),
       actions: [
         IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: () {},
         ),
+        
       ],
     );
   }

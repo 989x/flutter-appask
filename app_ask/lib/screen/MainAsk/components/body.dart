@@ -8,17 +8,39 @@ class Body extends StatelessWidget {
     return Column(
       children: [
 
-        //no
+        //header
         Container(
-          color: kPrimaryColor,
+          padding: EdgeInsets.fromLTRB(32.5, 3, 0, 0),
+          color: Colors.white,
           child: Row(
-            children: const [
-              //no
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {}, 
+                icon: const Icon(Icons.timeline_rounded,), 
+                label: Text('Home'),
+              ),
+
+              SizedBox(width: kDefaultPadding),
+              
+              ElevatedButton.icon(
+                onPressed: () {}, 
+                icon: const Icon(Icons.timeline_rounded,), 
+                label: Text('Trand'),
+              ),
+
+              SizedBox(width: kDefaultPadding),
+              
+              ElevatedButton.icon(
+                onPressed: () {}, 
+                icon: const Icon(Icons.timeline_rounded,), 
+                label: Text('Popular'),
+              ),
+              
             ],
           ),
         ),
-        //no
-
+        
+        //call from db 
         Expanded(child: ListView.builder(
           itemCount: AskData.length,
           itemBuilder: (
@@ -61,6 +83,7 @@ class AllArkBoard extends StatelessWidget {
 
           child: Container (
 
+            //edit outside board
             margin: const EdgeInsets.all(1),
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
@@ -69,7 +92,7 @@ class AllArkBoard extends StatelessWidget {
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
-                  blurRadius: 3,
+                  blurRadius: 6,
                 ),
               ]
             ),
@@ -80,7 +103,7 @@ class AllArkBoard extends StatelessWidget {
 
               children: [
 
-                //tag
+                // tag
                 // Container(
                 //   padding: EdgeInsets.all(6),
                 //   decoration: BoxDecoration(
@@ -89,7 +112,7 @@ class AllArkBoard extends StatelessWidget {
                 //   ),
                 // ),
 
-                //name
+                //main post
                 Row(
                   children: [
 
@@ -139,9 +162,7 @@ class AllArkBoard extends StatelessWidget {
                         ),
                       ),
                     ),
-
                   ],
-                  
                 ),
 
                 const SizedBox(height: 8),
@@ -151,7 +172,7 @@ class AllArkBoard extends StatelessWidget {
                   ask.asking,
                   style: const TextStyle(
                     fontWeight: FontWeight.normal,
-                    fontSize: 14,
+                    fontSize: 15,
                   ),
                 ),
 
@@ -175,24 +196,50 @@ class AllArkBoard extends StatelessWidget {
                   ),
                 ),
 
-                //button
+                //button post
                 Row(
+
+                  //uppost
                   children: <Widget>[
                     IconButton(
                       icon: const Icon(Icons.upload_rounded),
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
+                    Text(
+                      '400',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    //downpost
                     IconButton(
                       icon: const Icon(Icons.download_rounded),
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
+                    const Text(
+                      '60',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
 
+                    //comment
                     IconButton(
                       icon: const Icon(Icons.comment),
                       iconSize: 25,
                       onPressed: () => print('Like'),
+                    ),
+                    const Text(
+                      '30',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
