@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
               ElevatedButton.icon(
                 onPressed: () {}, 
                 icon: const Icon(Icons.timeline_rounded,), 
-                label: Text('Trand'),
+                label: Text('Trend'),
               ),
 
               SizedBox(width: kDefaultPadding),
