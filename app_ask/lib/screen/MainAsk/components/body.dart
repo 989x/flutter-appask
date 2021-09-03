@@ -2,49 +2,74 @@ import 'package:app_ask/constants.dart';
 import 'package:app_ask/models/ask.dart';
 import 'package:flutter/material.dart';
 
+import '../../../size_config.dart';
+
+// class Body extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       children: [
+
+//         //header
+//         Container(
+//           padding: EdgeInsets.fromLTRB(32.5, 3, 0, 0),
+//           color: Colors.white,
+//           child: Row(
+//             children: [
+
+//               //home
+//               ElevatedButton.icon(
+//                 onPressed: () {}, 
+//                 icon: const Icon(Icons.timeline_rounded,), 
+//                 label: Text('Home'),
+//               ),
+
+//               SizedBox(width: kDefaultPadding),
+              
+//               //Trand
+//               ElevatedButton.icon(
+//                 onPressed: () {}, 
+//                 icon: const Icon(Icons.timeline_rounded,), 
+//                 label: Text('Trend'),
+//               ),
+
+//               SizedBox(width: kDefaultPadding),
+              
+//               //Popular
+//               ElevatedButton.icon(
+//                 onPressed: () {}, 
+//                 icon: const Icon(Icons.timeline_rounded,), 
+//                 label: Text('Popular'),
+//               ),
+              
+//             ],
+//           ),
+//         ),
+        
+//         //call from db 
+//         // Expanded(child: ListView.builder(
+//         //   itemCount: AskData.length,
+//         //   itemBuilder: (
+//         //     context, index) => AllArkBoard(
+//         //       ask: AskData[index], 
+//         //       press: () {  },),
+//         //   )
+//         // )
+//       ],
+//     );
+//   }
+// }
+
 class Body extends StatelessWidget {
+  const Body({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Categories(),
 
-        //header
-        Container(
-          padding: EdgeInsets.fromLTRB(32.5, 3, 0, 0),
-          color: Colors.white,
-          child: Row(
-            children: [
-
-              //home
-              ElevatedButton.icon(
-                onPressed: () {}, 
-                icon: const Icon(Icons.timeline_rounded,), 
-                label: Text('Home'),
-              ),
-
-              SizedBox(width: kDefaultPadding),
-              
-              //Trand
-              ElevatedButton.icon(
-                onPressed: () {}, 
-                icon: const Icon(Icons.timeline_rounded,), 
-                label: Text('Trend'),
-              ),
-
-              SizedBox(width: kDefaultPadding),
-              
-              //Popular
-              ElevatedButton.icon(
-                onPressed: () {}, 
-                icon: const Icon(Icons.timeline_rounded,), 
-                label: Text('Popular'),
-              ),
-              
-            ],
-          ),
-        ),
-        
-        //call from db 
+        // call from db
         Expanded(child: ListView.builder(
           itemCount: AskData.length,
           itemBuilder: (
@@ -54,6 +79,65 @@ class Body extends StatelessWidget {
           )
         )
       ],
+    );
+  }
+}
+
+class Categories extends StatefulWidget {
+  const Categories({Key? key}) : super(key: key);
+
+  @override
+  _CategoriesState createState() => _CategoriesState ();
+}
+
+class _CategoriesState  extends State<Categories>{
+  List<String> categories = ["all", "new", "popular"];
+  int selectedIndex = 0;
+  @override
+  Widget build(BuildContext context){
+    return Padding(
+      padding: const EdgeInsets.all(7.0),
+      child: SizedBox(
+        height: 20,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: categories.length,
+          itemBuilder: (context, index) => buildCategorItem(index),
+        ),
+      ),
+    );
+  }
+
+  Widget buildCategorItem(int index) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedIndex = index;
+        });
+      },
+      child: Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(left: kDefaultPadding / 2),
+        padding: EdgeInsets.symmetric(
+          horizontal: kDefaultPadding / 1,
+          vertical: kDefaultPadding / 10,
+        ),
+        decoration: BoxDecoration(
+          color: 
+            selectedIndex == index ? Color(0xFFEFF3EE) : Colors.transparent ,
+          borderRadius: BorderRadius.circular(
+            kDefaultPadding,
+          ),
+        ),
+        child: Text(
+            categories[index],
+            style: TextStyle(
+              fontWeight: FontWeight.bold, 
+              fontSize: 14,
+              color: selectedIndex == index ? kPrimaryColor : Colors.blue[300],
+            ),
+          ),
+      ),
     );
   }
 }
@@ -81,27 +165,25 @@ class AllArkBoard extends StatelessWidget {
           horizontal: kDefaultPadding, vertical: kDefaultPadding / 4
         ),
 
-        child: Container(
+        child: Container (
 
-          child: Container (
+          //edit outside board
+          margin: const EdgeInsets.all(1),
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 6,
+              ),
+            ]
+          ),
 
-            //edit outside board
-            margin: const EdgeInsets.all(1),
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 6,
-                ),
-              ]
-            ),
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
 
               children: [
 
@@ -208,7 +290,7 @@ class AllArkBoard extends StatelessWidget {
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
-                    Text(
+                    const Text(
                       '400',
                       style: TextStyle(
                         fontSize: 12,
@@ -222,7 +304,7 @@ class AllArkBoard extends StatelessWidget {
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
-                    Text(
+                    const Text(
                       '60',
                       style: TextStyle(
                         fontSize: 12,
@@ -236,7 +318,7 @@ class AllArkBoard extends StatelessWidget {
                       iconSize: 25,
                       onPressed: () => print('Like'),
                     ),
-                    Text(
+                    const Text(
                       '30',
                       style: TextStyle(
                         fontSize: 12,
@@ -250,7 +332,6 @@ class AllArkBoard extends StatelessWidget {
             ),
           ),
         ),
-      ),
     );
   }
 }
