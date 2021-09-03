@@ -21,8 +21,10 @@ class WelcomeScreen extends StatelessWidget {
               "Welcome to app ask \n You can ask anything",
               textAlign: TextAlign.center,
               style: Theme.of(context)
-                .textTheme 
-                .headline5!
+                .textTheme.apply(
+                  bodyColor: Colors.purple[900],
+                ) 
+                .headline5!      
                 .copyWith(fontWeight: FontWeight.bold)
                 .apply(fontSizeFactor: 1.0),
             ),

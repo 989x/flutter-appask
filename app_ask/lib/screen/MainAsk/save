@@ -3,8 +3,6 @@ import 'package:app_ask/models/ask.dart';
 import 'package:app_ask/screen/MainAsk/components/body.dart';
 import 'package:flutter/material.dart';
 
-import 'package:app_ask/screen/MainAsk/components/appbar.dart';
-
 import 'components/body.dart';
 
 class MainAskScreen extends StatefulWidget {
@@ -15,19 +13,13 @@ class MainAskScreen extends StatefulWidget {
 class _MainAskScreenState extends State<MainAskScreen> {
   int _selectedIndex = 1;
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(),
-  //   );
-  // }
-  
+  @override
   Widget build(BuildContext context) {
-
     return Scaffold(
+      appBar: buildAppBar(
 
-      appBar: buildAppBar(),
-      
+      ),
+    
       //nothing have
       body: Body(
 
@@ -68,4 +60,17 @@ class _MainAskScreenState extends State<MainAskScreen> {
     );
   }
 
+  //Bar title name
+  AppBar buildAppBar() {
+    return AppBar(
+      // automaticallyImplyLeading: false,
+      title: const Text("community"),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {},
+        ),
+      ],
+    );
+  }
 }

@@ -9,11 +9,16 @@ ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
     primaryColor: kPrimaryColor,
     scaffoldBackgroundColor: Colors.white,
+
     // appBarTheme: appBarTheme,
+// new
+    appBarTheme: AppBarTheme(color: Colors.white, elevation: 0),
+
     iconTheme: IconThemeData(color: kContentColorLightTheme),
     // textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)
     //     .apply(bodyColor: kContentColorLightTheme),
-    colorScheme: ColorScheme.light(
+
+    colorScheme: const ColorScheme.light(
       primary: kPrimaryColor,
       secondary: kSecondaryColor,
       error: kErrorColor,
