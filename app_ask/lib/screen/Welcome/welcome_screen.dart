@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_ask/screen/SigninOrSingup/signin_or_singup_screen.dart';
+import 'package:app_ask/screen/SigninOrSignup/signin_or_signup_screen.dart';
 import 'package:app_ask/constants.dart';
 import 'package:app_ask/screen/MainAsk/main_ask_screen.dart';
 
@@ -12,7 +12,7 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             Spacer(flex: 1),
 
-            Image.asset("/Users/qwe/Documents/GitLab/flutter-app-ask/app_ask/assets/image/gretting.png"),
+            Image.asset("/Users/qwe/Documents/GitHub/flutter-app-ask/app_ask/assets/image/gretting.png"),
 
             Spacer(flex: 1),
 

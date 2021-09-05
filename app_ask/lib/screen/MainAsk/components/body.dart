@@ -4,62 +4,6 @@ import 'package:flutter/material.dart';
 
 import '../../../size_config.dart';
 
-// class Body extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-
-//         //header
-//         Container(
-//           padding: EdgeInsets.fromLTRB(32.5, 3, 0, 0),
-//           color: Colors.white,
-//           child: Row(
-//             children: [
-
-//               //home
-//               ElevatedButton.icon(
-//                 onPressed: () {}, 
-//                 icon: const Icon(Icons.timeline_rounded,), 
-//                 label: Text('Home'),
-//               ),
-
-//               SizedBox(width: kDefaultPadding),
-              
-//               //Trand
-//               ElevatedButton.icon(
-//                 onPressed: () {}, 
-//                 icon: const Icon(Icons.timeline_rounded,), 
-//                 label: Text('Trend'),
-//               ),
-
-//               SizedBox(width: kDefaultPadding),
-              
-//               //Popular
-//               ElevatedButton.icon(
-//                 onPressed: () {}, 
-//                 icon: const Icon(Icons.timeline_rounded,), 
-//                 label: Text('Popular'),
-//               ),
-              
-//             ],
-//           ),
-//         ),
-        
-//         //call from db 
-//         // Expanded(child: ListView.builder(
-//         //   itemCount: AskData.length,
-//         //   itemBuilder: (
-//         //     context, index) => AllArkBoard(
-//         //       ask: AskData[index], 
-//         //       press: () {  },),
-//         //   )
-//         // )
-//       ],
-//     );
-//   }
-// }
-
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -91,7 +35,7 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState  extends State<Categories>{
-  List<String> categories = ["all", "new", "popular"];
+  List<String> categories = ["all", "new", "trend"];
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context){
