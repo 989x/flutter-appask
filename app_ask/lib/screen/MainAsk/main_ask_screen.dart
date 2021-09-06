@@ -28,9 +28,7 @@ class _MainAskScreenState extends State<MainAskScreen> {
 
       appBar: buildAppBar(),
       
-      body: Body(
-        
-      ),
+      body: Body(),
 
 
       //botton menu

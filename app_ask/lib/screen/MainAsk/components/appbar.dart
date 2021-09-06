@@ -21,6 +21,7 @@ AppBar buildAppBar() {
 
     actions: [
       IconButton(
+        // ignore: prefer_const_constructors
         icon: Icon(Icons.chat_bubble_outline_rounded),
         color: Colors.black,
         onPressed: () {},
