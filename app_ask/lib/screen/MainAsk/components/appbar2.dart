@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:app_ask/constants.dart';
@@ -22,7 +21,7 @@ class _CategoriesState  extends State<Categories>{
     return Padding(
       padding: const EdgeInsets.all(9.0),
       child: SizedBox(
-        height: 20,
+        height: 30,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,

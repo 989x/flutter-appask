@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
       
       theme: lightThemeData(
         context,
+        
         // appBarTheme:AppBarTheme(color: Colors.white),
       ),
 
