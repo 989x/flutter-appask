@@ -7,13 +7,31 @@ import 'package:app_ask/screen/MainAsk/components/appbar.dart';
 
 import 'components/body.dart';
 
+import 'package:app_ask/screen/MainAsk/components/testapi.dart';
+
 class MainAskScreen extends StatefulWidget {
   @override
   State<MainAskScreen> createState() => _MainAskScreenState();
 }
 
 class _MainAskScreenState extends State<MainAskScreen> {
-  int _selectedIndex = 1;
+
+  int _selectedIndex = 0;
+
+  List<Widget> _widgetOptions = <Widget>[
+    Text('1'),
+    Body(),
+    Text('333'),
+    Testpage(),
+    Text('55555'),
+
+  ];
+
+  void _onItemTap(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   // @override
   // Widget build(BuildContext context) {
@@ -22,32 +40,33 @@ class _MainAskScreenState extends State<MainAskScreen> {
   //   );
   // }
   
+
   Widget build(BuildContext context) {
 
     return Scaffold(
 
       appBar: buildAppBar(),
       
-      body: Body(),
-
-
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+   
       //botton menu
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: (value){
-          setState(() {
-            _selectedIndex = value;
-          });
-        },
+        // currentIndex: _selectedIndex,
+        // onTap: (value){
+        //   setState(() {
+        //     _selectedIndex = value;
+        //   });
+        // },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.travel_explore_rounded), 
             label: "find",
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.alt_route_rounded), 
-              label: "all",
+            icon: Icon(Icons.alt_route_rounded), 
+            label: "all",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.live_help_outlined), 
@@ -62,6 +81,8 @@ class _MainAskScreenState extends State<MainAskScreen> {
             label: "me"
           ),
         ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTap,
       ),
     );
   }
