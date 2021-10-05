@@ -3,11 +3,13 @@ import 'package:app_ask/models/ask.dart';
 import 'package:app_ask/screen/MainAsk/components/body.dart';
 import 'package:flutter/material.dart';
 
-import 'package:app_ask/screen/MainAsk/components/appbar.dart';
+import 'package:app_ask/screen/MainAsk/components/old-appbar.dart';
 
 import 'components/body.dart';
 
-import 'package:app_ask/screen/MainAsk/components/testapi.dart';
+import 'package:app_ask/screen/MainAsk/components/appbar.dart';
+import 'package:app_ask/screen/MainAsk/components/all-screen.dart';
+
 
 class MainAskScreen extends StatefulWidget {
   @override
@@ -22,8 +24,9 @@ class _MainAskScreenState extends State<MainAskScreen> {
     Text('1'),
     Body(),
     Text('333'),
-    Testpage(),
-    Text('55555'),
+    // Bodyclone(),
+    Text('4444'),
+    Workss(),
 
   ];
 
@@ -45,7 +48,7 @@ class _MainAskScreenState extends State<MainAskScreen> {
 
     return Scaffold(
 
-      appBar: buildAppBar(),
+      // appBar: buildAppBar(),
       
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
