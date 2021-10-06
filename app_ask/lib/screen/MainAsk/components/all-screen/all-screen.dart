@@ -3,12 +3,12 @@
 
 import 'package:app_ask/constants.dart';
 import 'package:app_ask/models/ask.dart';
-import 'package:app_ask/screen/MainAsk/components/body.dart';
+import 'package:app_ask/screen/MainAsk/components/all-screen/body.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../../constants.dart';
 
-import '../components/body.dart';
+import '../../components/all-screen/body.dart';
 
 // import '../components/appbar.dart';
 // import '../components/appbar2.dart';

@@ -4,9 +4,9 @@ import 'package:app_ask/constants.dart';
 import 'package:app_ask/models/ask.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../../constants.dart';
 
-import '../components/appbar2.dart';
+import '../../components/all-screen/appbar2.dart';
 
 class SimpleAppBarPage extends StatefulWidget {
 
@@ -39,15 +39,15 @@ class _SimpleAppBarPageState extends State<SimpleAppBarPage> {
           ),
         ),
 
-            
-          IconButton(
-            icon: Icon(Icons.chat_bubble_outline_rounded),
-            color: Colors.black,
-            onPressed: () {},
-          ),
+        IconButton(
+          icon: Icon(Icons.chat_bubble_outline_rounded),
+          color: Colors.black,
+          onPressed: () {},
+        ),
 
       ],
     ),
+
     // child: Scaffold(
     //   appBar: AppBar(
 

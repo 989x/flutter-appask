@@ -1,11 +1,11 @@
 import 'package:app_ask/constants.dart';
 import 'package:app_ask/models/ask.dart';
-import 'package:app_ask/screen/MainAsk/components/appbar.dart';
+import 'package:app_ask/screen/MainAsk/components/all-screen/appbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../../constants.dart';
 
-import '../components/appbar2.dart';
+import '../../components/all-screen/appbar2.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -14,7 +14,9 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+
         SimpleAppBarPage(),
+
         // ignore: prefer_const_constructors
         Categories(),
 

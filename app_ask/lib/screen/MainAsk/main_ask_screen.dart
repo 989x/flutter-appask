@@ -1,14 +1,17 @@
+
+// ignore_for_file: prefer_final_fields, prefer_const_constructors
+
 import 'package:app_ask/constants.dart';
 import 'package:app_ask/models/ask.dart';
-import 'package:app_ask/screen/MainAsk/components/body.dart';
+import 'package:app_ask/screen/MainAsk/components/all-screen/body.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_ask/screen/MainAsk/components/old-appbar.dart';
 
-import 'components/body.dart';
+import 'components/all-screen/body.dart';
 
-import 'package:app_ask/screen/MainAsk/components/appbar.dart';
-import 'package:app_ask/screen/MainAsk/components/all-screen.dart';
+import 'package:app_ask/screen/MainAsk/components/all-screen/appbar.dart';
+import 'package:app_ask/screen/MainAsk/components/all-screen/all-screen.dart';
 
 
 class MainAskScreen extends StatefulWidget {
@@ -22,7 +25,7 @@ class _MainAskScreenState extends State<MainAskScreen> {
 
   List<Widget> _widgetOptions = <Widget>[
     Text('1'),
-    Body(),
+    Workss(),
     Text('333'),
     // Bodyclone(),
     Text('4444'),
