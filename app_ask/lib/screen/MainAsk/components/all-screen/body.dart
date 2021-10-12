@@ -10,6 +10,8 @@ import '../../components/all-screen/appbar2.dart';
 
 import '../../../../models/results_model.dart';
 
+import './loading_screen/loading_screen.dart';
+
 class Body extends StatefulWidget {
   const Body({Key? key}) : super(key: key);
 
@@ -39,7 +41,7 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
 
     if (loading) {
-      return Text("Loading");
+      return askDataLoading();
     }
     
     return Column(
