@@ -12,13 +12,17 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             Spacer(flex: 1),
 
-            Image.asset("/Users/qwe/Documents/GitHub/flutter-app-ask/app_ask/assets/image/gretting.png"),
+            Center(child: Image.asset(
+              "/Users/qwe/Documents/GitHub/flutter-app-ask/app_ask/assets/image/waving-hand.png",
+              scale: 1.2,
+            )
+            ),
 
             Spacer(flex: 1),
 
             //text 1
             Text(
-              "Welcome to app ask \n You can ask anything",
+              "Welcome to app ask \n wait a moment",
               textAlign: TextAlign.center,
               style: Theme.of(context)
                 .textTheme.apply(

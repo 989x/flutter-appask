@@ -196,3 +196,102 @@ class ArticlePage extends StatelessWidget {
 
 
 
+
+
+
+
+
+
+//
+
+@override
+  Widget build(BuildContext context) {
+    return InkWell(
+
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: kDefaultPadding, vertical: kDefaultPadding /4),
+        child: Container(
+
+          margin: const EdgeInsets.all(1),
+          padding: const EdgeInsets.all(1),
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 6,
+                ),
+              ]
+          ),
+
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              Row(
+                children: [
+
+                  Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: CircleAvatar(
+                      radius: 16,
+                      backgroundImage: NetworkImage(results.profile),
+                    ),
+                  ),
+
+                  Padding(
+                    padding:
+                        // const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        const EdgeInsets.all(6),
+                    //form Column
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          results.name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                      ],
+                    ),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: kDefaultPadding / 2),
+                    child: Opacity(
+                      opacity: 0.8,
+                      child: Text(
+                        results.time,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 8),
+
+              //asking
+              Text(
+                results.asking,
+                style: const TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 15,
+                ),
+              ),
+
+                ],
+              )
+            ],
+          ),
+        ),
+        ),
+    );
+  }

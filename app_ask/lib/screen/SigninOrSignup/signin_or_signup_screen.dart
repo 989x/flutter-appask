@@ -34,7 +34,11 @@ class SigninOrSignupScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    Image.asset("/Users/qwe/Documents/GitHub/flutter-app-ask/app_ask/assets/image/login.png"), 
+                    Center(child: Image.asset(
+                      "/Users/qwe/Documents/GitHub/flutter-app-ask/app_ask/assets/image/raising-hands.png",
+                      scale: 1.2,
+                    )
+                    ), 
 
                     const SizedBox(height: kDefaultPadding ),
 

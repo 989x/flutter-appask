@@ -188,18 +188,19 @@ class ArticlePageBody extends StatelessWidget {
 
               const SizedBox(height: 16),
               
-              Text(
-                'comment',
-                
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+              Center(
+                child: Text(
+                  'comment',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
 
-                            Row(
+              Row(
                 children: [
                   //avatar
 
@@ -211,7 +212,7 @@ class ArticlePageBody extends StatelessWidget {
                     ),
                   ),
 
-                  //name
+                //name
                   Padding(
                     padding:
                         // const EdgeInsets.symmetric(horizontal: kDefaultPadding),

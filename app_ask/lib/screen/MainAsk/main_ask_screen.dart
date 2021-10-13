@@ -4,6 +4,8 @@
 import 'package:app_ask/constants.dart';
 import 'package:app_ask/models/ask.dart';
 import 'package:app_ask/screen/MainAsk/components/all-screen/body.dart';
+import 'package:app_ask/screen/MainAsk/components/find-screen/find-screen.dart';
+import 'package:app_ask/screen/MainAsk/components/fix-screen/fix-screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_ask/screen/MainAsk/components/old-appbar.dart';
@@ -24,12 +26,12 @@ class _MainAskScreenState extends State<MainAskScreen> {
   int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-    Text('1'),
+    FindScreen(),
     Workss(),
-    Text('333'),
+    FixScreen(),
     // Bodyclone(),
-    Text('4444'),
-    Workss(),
+    FixScreen(),
+    FixScreen(),
 
   ];
 
