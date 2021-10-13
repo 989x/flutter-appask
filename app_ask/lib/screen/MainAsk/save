@@ -74,3 +74,125 @@ class _MainAskScreenState extends State<MainAskScreen> {
     );
   }
 }
+
+
+
+
+//new
+
+
+
+
+
+// ignore_for_file: file_names, prefer_const_constructors
+
+import 'package:app_ask/screen/MainAsk/components/all-screen/body.dart';
+
+import 'package:flutter/material.dart';
+
+import '../../../../../models/results_model.dart';
+
+import 'package:app_ask/services%20/api_service.dart';
+
+import '../appbar.dart';
+
+class ArticlePage extends StatelessWidget {
+
+  const ArticlePage({
+    Key? key,
+    required this.results,
+    required this.press,
+  }) : super(key: key);
+
+  final Results results;
+  final VoidCallback press;
+  
+  // late final Results results;
+
+  // ArticlePage({this.results}) ;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      appBar: AppBar(
+
+        foregroundColor: Colors.black54,
+
+        title:Text(
+          results.asking,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+            color: Colors.black87,
+          ),
+        ),
+
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.notifications_rounded,
+              color: Colors.black54,
+            ),
+            onPressed: () {},
+          )
+        ],
+
+      ),
+      
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+
+            Container(
+            height: 200.0,
+            width: double.infinity,
+              decoration: BoxDecoration(
+              //let's add the height
+                image: DecorationImage(
+                    image: NetworkImage(results.image), fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+
+            SizedBox(
+              height: 8.0,
+            ),
+
+            Container(
+              decoration: BoxDecoration(image: NetworkImage(results.profile)),
+            ),
+            
+            Container(
+              padding: EdgeInsets.all(10.0),
+              
+              child: Text(
+                results.name,
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 8.0,
+            ),
+
+            Text(
+              results.asking,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16.0,
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+

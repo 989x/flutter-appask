@@ -1,112 +1,43 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names, prefer_const_constructors
+
 import 'package:app_ask/constants.dart';
+import 'package:app_ask/screen/MainAsk/components/all-screen/body.dart';
 
-// import 'package:app_ask/models/ask.dart';
+import 'package:flutter/material.dart';
 
-import 'package:app_ask/screen/MainAsk/components/all-screen/appbar.dart';
+import '../../../../../models/results_model.dart';
 
 import 'package:app_ask/services%20/api_service.dart';
 
-import '../../../../constants.dart';
+import '../appbar.dart';
 
-import '../../components/all-screen/appbar2.dart';
+class ArticlePageBody extends StatelessWidget {
 
-import '../../../../models/results_model.dart';
-
-import './loading_screen/loading_screen.dart';
-
-import './pages/ask-details.dart';
-
-
-
-class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
-
-  @override
-  State<Body> createState() => _BodyState();
-}
-
-
-
-class _BodyState extends State<Body> {
-  late List<Results> asks;
-  bool loading = true;
-
-  Future fetch() async {
-    final res = await ApiService().getResults();
-    setState(() {
-      asks = res.toList() as List<Results>;
-      loading = false;
-    });
-  }
-
-  @override
-  void initState() {
-    fetch();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-
-    if (loading) {
-      return askDataLoading();
-    }
-    
-    return Column(
-      children: [
-        SimpleAppBarPage(),
-
-        // ignore: prefer_const_constructors
-        Categories(),
-
-        // call from db
-        Expanded(
-          child: ListView.builder(
-            itemCount: asks.length,
-            itemBuilder: (context, index) => 
-              AllArkBoard(ask: asks[index], press: () {},),
-          )
-        )
-      ],
-    );
-  }
-}
-
-
-
-class AllArkBoard extends StatelessWidget {
-  //debug error
-  const AllArkBoard({
+  const ArticlePageBody({
     Key? key,
-    required this.ask,
+    required this.results,
     required this.press,
   }) : super(key: key);
 
-  final Results ask;
+  final Results results;
   final VoidCallback press;
+  
+  // late final Results results;
+
+  // ArticlePage({this.results}) ;
 
   @override
-  Widget build( BuildContext context ) {
+  Widget build(BuildContext context) {
     return InkWell(
-      //tab
-
-      onTap: () {
-        Navigator.push(
-          context, 
-          MaterialPageRoute(
-            builder: (context) => ArticlePage(results: ask, press: () {  },))
-        );
-      },
-
 
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: kDefaultPadding, vertical: kDefaultPadding / 4),
-        child: Container(
-          //edit outside board
-          margin: const EdgeInsets.all(1),
-          padding: const EdgeInsets.all(8),
+        padding: EdgeInsets.symmetric(
+          horizontal: kDefaultPadding, vertical: kDefaultPadding / 4
+        ),
+
+        child:  Container(
+          margin: EdgeInsets.all(1),
+          padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(12),
@@ -121,16 +52,6 @@ class AllArkBoard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // tag
-              // Container(
-              //   padding: EdgeInsets.all(6),
-              //   decoration: BoxDecoration(
-              //     color: Colors.red,
-              //     borderRadius: BorderRadius.circular(30),
-              //   ),
-              // ),
-
-              //main post
               Row(
                 children: [
                   //avatar
@@ -139,11 +60,11 @@ class AllArkBoard extends StatelessWidget {
                     padding: const EdgeInsets.all(2),
                     child: CircleAvatar(
                       radius: 16,
-                      backgroundImage: NetworkImage(ask.profile),
+                      backgroundImage: NetworkImage(results.profile),
                     ),
                   ),
 
-                  //name
+                                    //name
                   Padding(
                     padding:
                         // const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -153,7 +74,7 @@ class AllArkBoard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          ask.name,
+                          results.name,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -165,27 +86,26 @@ class AllArkBoard extends StatelessWidget {
                   ),
 
                   //time
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: kDefaultPadding / 2),
+                  Padding(padding: EdgeInsets.symmetric(
+                    horizontal: kDefaultPadding / 2),
                     child: Opacity(
                       opacity: 0.8,
                       child: Text(
-                        ask.time,
-                        style: const TextStyle(
+                        results.time,
+                          style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
 
               const SizedBox(height: 8),
-
+              
               //asking
               Text(
-                ask.asking,
+                results.asking,
                 style: const TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 15,
@@ -203,7 +123,7 @@ class AllArkBoard extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                      image: NetworkImage(ask.image),
+                      image: NetworkImage(results.image),
                       // fit: BoxFit.fitHeight,
                       // fit: BoxFit.contain,
                       fit: BoxFit.fitWidth,
@@ -212,7 +132,6 @@ class AllArkBoard extends StatelessWidget {
                 ),
               ),
 
-              //button post
               Row(
                 //uppost
                 children: <Widget>[
@@ -258,6 +177,88 @@ class AllArkBoard extends StatelessWidget {
                   ),
                 ],
               ),
+
+
+
+
+          //--------------  --------------  --------------  --------------  --------------  --------------  --------------
+
+
+
+
+              const SizedBox(height: 16),
+              
+              Text(
+                'comment',
+                
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+                            Row(
+                children: [
+                  //avatar
+
+                  Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: CircleAvatar(
+                      radius: 16,
+                      backgroundImage: NetworkImage(results.profile),
+                    ),
+                  ),
+
+                  //name
+                  Padding(
+                    padding:
+                        // const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        const EdgeInsets.all(6),
+                    //form Column
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          results.name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                      ],
+                    ),
+                  ),
+
+                  //time
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: kDefaultPadding / 2),
+                    child: Opacity(
+                      opacity: 0.8,
+                      child: Text(
+                        results.time,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 8),
+              //asking
+              Text(
+                results.asking,
+                style: const TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 15,
+                ),
+              ),
+
             ],
           ),
         ),
@@ -265,3 +266,4 @@ class AllArkBoard extends StatelessWidget {
     );
   }
 }
+
