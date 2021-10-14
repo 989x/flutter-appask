@@ -9,7 +9,7 @@ import '../../../../../models/results_model.dart';
 
 import 'package:app_ask/services%20/api_service.dart';
 
-import '../appbar.dart';
+// import 'package:app_ask/constants.dart';
 
 class ArticlePageBody extends StatelessWidget {
 
@@ -191,9 +191,11 @@ class ArticlePageBody extends StatelessWidget {
               Center(
                 child: Text(
                   'comment',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
+                    color: Colors.blue[900],
+                    
                   ),
                 ),
               ),
@@ -259,6 +261,145 @@ class ArticlePageBody extends StatelessWidget {
                   fontSize: 15,
                 ),
               ),
+
+              const SizedBox(height: 26),
+
+
+
+
+
+
+
+              Row(
+                children: [
+                  //avatar
+
+                  Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: CircleAvatar(
+                      radius: 16,
+                      backgroundImage: NetworkImage(results.profile),
+                    ),
+                  ),
+
+                //name
+                  Padding(
+                    padding:
+                        // const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        const EdgeInsets.all(6),
+                    //form Column
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          results.name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                      ],
+                    ),
+                  ),
+
+                  //time
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: kDefaultPadding / 2),
+                    child: Opacity(
+                      opacity: 0.8,
+                      child: Text(
+                        results.time,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 8),
+              //asking
+              Text(
+                results.asking,
+                style: const TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 15,
+                ),
+              ),
+
+              const SizedBox(height: 26),
+
+
+
+
+
+              Row(
+                children: [
+                  //avatar
+
+                  Padding(
+                    padding: const EdgeInsets.all(2),
+                    child: CircleAvatar(
+                      radius: 16,
+                      backgroundImage: NetworkImage(results.profile),
+                    ),
+                  ),
+
+                //name
+                  Padding(
+                    padding:
+                        // const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                        const EdgeInsets.all(6),
+                    //form Column
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          results.name,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                      ],
+                    ),
+                  ),
+
+                  //time
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: kDefaultPadding / 2),
+                    child: Opacity(
+                      opacity: 0.8,
+                      child: Text(
+                        results.time,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 8),
+              //asking
+              Text(
+                results.asking,
+                style: const TextStyle(
+                  fontWeight: FontWeight.normal,
+                  fontSize: 15,
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+
+              
 
             ],
           ),

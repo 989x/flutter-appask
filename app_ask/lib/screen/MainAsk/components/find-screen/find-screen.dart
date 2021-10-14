@@ -5,6 +5,8 @@ import 'package:app_ask/screen/SigninOrSignup/signin_or_signup_screen.dart';
 import 'package:app_ask/constants.dart';
 import 'package:app_ask/screen/MainAsk/main_ask_screen.dart';
 
+import './search-bar.dart';
+
 class FindScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,13 +14,19 @@ class FindScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(  
           children: [
-            Spacer(flex: 1),
+
+           Spacer(flex: 1),
 
             Center(child: Image.asset(
               "/Users/qwe/Documents/GitHub/flutter-app-ask/app_ask/assets/image/detective.png",
               scale: 1.5
             )
             ),
+
+            Spacer(flex: 1),
+
+
+            AnimatedSearchBar(),
 
             Spacer(flex: 1),
 
