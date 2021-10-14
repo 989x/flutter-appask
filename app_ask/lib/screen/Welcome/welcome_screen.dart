@@ -22,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
 
             //text 1
             Text(
-              "Welcome to app ask \n wait a moment",
+              "Welcome to app ask \n You can ask anything",
               textAlign: TextAlign.center,
               style: Theme.of(context)
                 .textTheme.apply(
