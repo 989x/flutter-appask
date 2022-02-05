@@ -27,8 +27,8 @@ https://www.youtube.com/watch?v=G6gMhYUXrKU
 ___________________________________________________________
 
 
-![Preview](https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/1-hello.png)
+![Preview](https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/1-hello.png | width=100)
 
-![Preview](https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/2-signin.png)
+![Preview](https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/2-signin.png | width=150)
 
-![Preview](https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/3-main.png)
+![Preview](https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/3-main.png | width=200)
