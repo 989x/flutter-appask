@@ -35,9 +35,9 @@ ___________________________________________________________
      <td>Homefeed Screen</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/1-hello.png" width=270 height=480></td>
-    <td><img src="https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/2-signin.png" width=270 height=480></td>
-    <td><img src="https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/3-main.png" width=270 height=480></td>
+    <td><img src="https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/1-hello.png" height=500></td>
+    <td><img src="https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/2-signin.png" height=500></td>
+    <td><img src="https://github.com/SinsamutQ/flutter-app-ask/blob/main/previews/image/3-main.png" height=500></td>
   </tr>
 </table>
 
